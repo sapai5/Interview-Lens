@@ -9,13 +9,16 @@ export default defineConfig({
     permissions: [
       'activeTab',
       'storage',
-      'scripting'
+      'scripting',
+      'camera'  // Add camera permission
     ],
     host_permissions: [
-      "wss://your-backend-url/*"
+      'wss://your-backend-url/*',
+      '<all_urls>'  // Add this for camera access
     ],
-    action: {
-      default_popup: 'entrypoints/popup/index.html'
-    }
+    web_accessible_resources: [{
+      resources: ['index.html'],
+      matches: ['<all_urls>']
+    }]
   }
 });

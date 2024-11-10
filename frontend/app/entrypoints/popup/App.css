@@ -2,7 +2,7 @@
 :root {
   --primary-blue: #3b82f6;
   --primary-red: #ef4444;
-  --primary-green: #10b981;
+  --primary-green: #10b;
   --primary-violet: #8b5cf6;
   --background: #FAFBFC;
   --card-border: rgba(229, 231, 235, 0.8);
@@ -241,7 +241,324 @@
     transform: translateY(0);
   }
 }
+:root {
+  --primary-blue: #3b82f6;
+  --primary-red: #ef4444;
+  --primary-green: #10b981;
+  --primary-violet: #8b5cf6;
+  --background: #FAFBFC;
+  --card-border: rgba(229, 231, 235, 0.8);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+}
+
+/* Container responsiveness */
+@media (max-width: 768px) {
+  .metrics-container, .trend-grid {
+    padding: 4px;
+  }
+}
+
+/* Base animations and transitions */
+.camera-placeholder {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.metrics-card, .metric-card {
+  animation: slide-up 0.4s ease-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-bar {
+  position: relative;
+  overflow: hidden;
+}
+.metric-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite linear;
+}
+
+.button-primary {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+.glass-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--card-border) 1px, transparent 1px), linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-red: #ef4444;
+  --primary-green: #10b981;
+  --primary-violet: #8b5cf6;
+  --background: #FAFBFC;
+  --card-border: rgba(229, 231, 235, 0.8);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+}
+
+.camera-placeholder {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.metrics-card, .metric-card {
+  animation: slide-up 0.4s ease-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-bar {
+  position: relative;
+  overflow: hidden;
+}
+.metric-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite linear;
+}
+
+.button-primary {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+.glass-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--card-border) 1px, transparent 1px), linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-red: #ef4444;
+  --primary-green: #10b981;
+  --primary-violet: #8b5cf6;
+  --background: #FAFBFC;
+  --card-border: rgba(229, 231, 235, 0.8);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+}
+
+.camera-placeholder {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.metrics-card, .metric-card {
+  animation: slide-up 0.4s ease-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-bar {
+  position: relative;
+  overflow: hidden;
+}
+.metric-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite linear;
+}
+
+.button-primary {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+.glass-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--card-border) 1px, transparent 1px), linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-red: #ef4444;
+  --primary-green: #10b981;
+  --primary-violet: #8b5cf6;
+  --background: #FAFBFC;
+  --card-border: rgba(229, 231, 235, 0.8);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+.camera-placeholder {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.metrics-card, .metric-card {
+  animation: slide-up 0.4s ease-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-bar {
+  position: relative;
+  overflow: hidden;
+}
+.metric-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite linear;
+}
+
+.button-primary {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+.glass-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--card-border) 1px, transparent 1px), linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
