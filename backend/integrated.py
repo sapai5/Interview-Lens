@@ -160,7 +160,7 @@ class InterviewFeedbackApp:
     def __init__(self):
         self.metrics = InterviewMetrics(window_seconds=60)
         self.root = tk.Tk()
-        self.root.title("Interview Feedback System")
+        self.root.title("Interview Lens")
         self.root.geometry("1400x900")
 
         # Create main container

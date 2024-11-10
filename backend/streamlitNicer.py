@@ -183,7 +183,7 @@ async def start_transcription(metrics):
 
 
 def main():
-    st.set_page_config(layout="wide", page_title="Interview Feedback System")
+    st.set_page_config(layout="wide", page_title="Interview Lens")
 
     # Custom CSS to ensure dark background
     st.markdown("""
@@ -200,7 +200,7 @@ def main():
         st.session_state.analysis_started = False
 
     # Title and description
-    st.title("Interview Practice Assistant")
+    st.title("Interview Lens")
     st.markdown("""
     This tool helps you practice your interview skills by analyzing:
     - Speech patterns and filler words
