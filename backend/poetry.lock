@@ -1,4 +1,15 @@
 [[package]]
+name = "amazon-transcribe"
+version = "0.6.2"
+description = "Async Python SDK for Amazon Transcribe Streaming"
+category = "main"
+optional = false
+python-versions = ">= 3.7"
+
+[package.dependencies]
+awscrt = ">=0.16.0,<0.17.0"
+
+[[package]]
 name = "annotated-types"
 version = "0.7.0"
 description = "Reusable constraint types to use with typing.Annotated"
@@ -26,6 +37,14 @@ test = ["anyio", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypothesis
 trio = ["trio (>=0.26.1)"]
 
 [[package]]
+name = "awscrt"
+version = "0.16.26"
+description = "A common runtime for AWS Python projects"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "blinker"
 version = "1.9.0"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -51,6 +70,14 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 pycparser = "*"
+
+[[package]]
+name = "charset-normalizer"
+version = "3.4.0"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
 
 [[package]]
 name = "click"
@@ -306,6 +333,17 @@ optional = false
 python-versions = ">=3.10"
 
 [[package]]
+name = "pyaudio"
+version = "0.2.14"
+description = "Cross-platform audio I/O with PortAudio"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+test = ["numpy"]
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -381,6 +419,24 @@ description = "YAML parser and emitter for Python"
 category = "main"
 optional = false
 python-versions = ">=3.8"
+
+[[package]]
+name = "requests"
+version = "2.32.3"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<4"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<3"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "rich"
@@ -463,6 +519,20 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "urllib3"
+version = "2.2.3"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+h2 = ["h2 (>=4,<5)"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
+
+[[package]]
 name = "uvicorn"
 version = "0.32.0"
 description = "The lightning-fast ASGI server."
@@ -534,14 +604,17 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "247e18b6846bb1707f48c1e100ca971a26915c4f8553c74c8e12689116b7eece"
+content-hash = "1d48089de76a55f7aec5e1130772913092e28788d02eec693c00a04491e71345"
 
 [metadata.files]
+amazon-transcribe = []
 annotated-types = []
 anyio = []
+awscrt = []
 blinker = []
 certifi = []
 cffi = []
+charset-normalizer = []
 click = []
 colorama = []
 dnspython = []
@@ -561,6 +634,7 @@ markdown-it-py = []
 markupsafe = []
 mdurl = []
 numpy = []
+pyaudio = []
 pycparser = []
 pydantic = []
 pydantic-core = []
@@ -568,6 +642,7 @@ pygments = []
 python-dotenv = []
 python-multipart = []
 pyyaml = []
+requests = []
 rich = []
 shellingham = []
 sniffio = []
@@ -575,6 +650,7 @@ soundcard = []
 starlette = []
 typer = []
 typing-extensions = []
+urllib3 = []
 uvicorn = []
 uvloop = []
 watchfiles = []

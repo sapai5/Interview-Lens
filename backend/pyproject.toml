@@ -9,6 +9,10 @@ python = "^3.10"
 Flask = "^3.0.3"
 SoundCard = "^0.4.3"
 fastapi = {extras = ["standard"], version = "^0.115.4"}
+amazon-transcribe = "^0.6.2"
+websockets = "^14.0"
+PyAudio = "^0.2.14"
+requests = "^2.32.3"
 
 [tool.poetry.dev-dependencies]
 
