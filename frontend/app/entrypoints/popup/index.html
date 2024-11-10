@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InterviewLens</title>
+  <!-- Preload fonts -->
+  <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <!-- Fallback font loading -->
+  <noscript>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+            type="text/css"
+    />
+  </noscript>
+  <!-- Custom styles -->
+  <style>
+    /* Base styles to prevent FOUC (Flash of Unstyled Content) */
+    html {
+      background: #FAFBFC;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 800px;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    #app {
+      width: 100%;
+      height: 100%;
+    }
+    /* Loading state */
+    .loading {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #FAFBFC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+    }
+    #app:empty + .loading {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<!-- Loading fallback -->
+<div class="loading">
+  <div class="text-gray-400 text-sm">Loading InterviewLens...</div>
+</div>
+<!-- Scripts -->
+<script type="module" src="./main.tsx"></script>
+</body>
+</html>

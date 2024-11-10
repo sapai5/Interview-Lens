@@ -1,0 +1,247 @@
+/* Base resets and custom properties */
+:root {
+  --primary-blue: #3b82f6;
+  --primary-red: #ef4444;
+  --primary-green: #10b981;
+  --primary-violet: #8b5cf6;
+  --background: #FAFBFC;
+  --card-border: rgba(229, 231, 235, 0.8);
+}
+
+/* Custom animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Camera icon animation */
+.camera-placeholder {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Metric cards entrance animation */
+.metrics-card {
+  animation: slide-up 0.5s ease-out;
+}
+
+/* Overlay animations */
+.metrics-overlay {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Button hover effects */
+.control-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.control-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.control-button:active {
+  transform: scale(0.98);
+}
+
+/* Progress bar animations */
+.metric-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* Card hover effects */
+.metric-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Status indicator pulse */
+.status-indicator {
+  position: relative;
+}
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.2;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+.metrics-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.metrics-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.metrics-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+/* Trend graph styles */
+.trend-grid {
+  background-size: 40px 40px;
+  background-image:
+          linear-gradient(to right, var(--card-border) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+}
+
+/* Video container enhancement */
+.video-container {
+  position: relative;
+  background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.03) 100%);
+}
+
+/* Metric badge glow effect */
+.metric-badge {
+  position: relative;
+}
+
+.metric-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  border-radius: inherit;
+  animation: badge-shine 2s linear infinite;
+}
+
+@keyframes badge-shine {
+  from {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  to {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* Glass morphism effects for overlays */
+.glass-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced button states */
+.button-primary {
+  background: linear-gradient(to right, var(--primary-blue), #60a5fa);
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.button-stop {
+  background: linear-gradient(to right, var(--primary-red), #f87171);
+}
+
+.button-stop:hover {
+  background: linear-gradient(to right, #dc2626, #ef4444);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+  );
+  animation: loading-shine 1.5s infinite;
+}
+
+@keyframes loading-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Text animations */
+.animated-text {
+  animation: text-fade 0.5s ease-out;
+}
+
+@keyframes text-fade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
