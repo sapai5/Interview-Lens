@@ -1,7 +1,3 @@
-from ctypes import *
-import ctypes.util
-cdll.LoadLibrary(ctypes.util.find_library('z'))
-
 import os
 import soundcard as sc
 import numpy as np
